@@ -1,4 +1,4 @@
-Last updated: 2026-03-17
+Last updated: 2026-03-18
 
 # 開発状況生成プロンプト（開発者向け）
 
@@ -227,6 +227,8 @@ Last updated: 2026-03-17
 
 ## 最近の変更（過去7日間）
 ### コミット履歴:
+1eec6c7 追記：「この記事に書かないこと」
+4f79f1a Update project summaries (overview & development status) [auto]
 4904c38 執筆中：小規模TUIをClaude無料版chatで作る遊びが楽しい
 2734d58 CI
 71bc37d jekyll用設定
@@ -236,12 +238,17 @@ Last updated: 2026-03-17
 .github/workflows/call-daily-project-summary.yml
 .github/workflows/call-issue-note.yml
 .github/workflows/call-translate-readme.yml
+.github/workflows/issue-note.yml
 .gitignore
 _config.yml
 articles/github-zenn-linkage-20260316.md
+generated-docs/development-status-generated-prompt.md
+generated-docs/development-status.md
+generated-docs/project-overview-generated-prompt.md
+generated-docs/project-overview.md
 package-lock.json
 package.json
 
 
 ---
-Generated at: 2026-03-17 07:08:43 JST
+Generated at: 2026-03-18 07:08:32 JST
