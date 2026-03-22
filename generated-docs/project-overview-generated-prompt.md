@@ -1,4 +1,4 @@
-Last updated: 2026-03-18
+Last updated: 2026-03-23
 
 
 # プロジェクト概要生成プロンプト（来訪者向け）
@@ -156,4 +156,4 @@ package.json
 
 
 ---
-Generated at: 2026-03-18 07:08:31 JST
+Generated at: 2026-03-23 07:03:58 JST

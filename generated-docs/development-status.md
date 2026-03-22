@@ -1,57 +1,54 @@
-Last updated: 2026-03-18
+Last updated: 2026-03-23
 
 # Development Status
 
 ## 現在のIssues
-オープン中のIssueはありません。
-現在、プロジェクトは特定の未解決の問題を抱えていません。
-直近のタスクは、既存ワークフローの最適化やドキュメントの改善に焦点を当てることが考えられます。
+- 現在、プロジェクトにオープンなIssueはありません。
+- 全ての既知のタスクは完了済み、または関連する作業がクローズされました。
+- 今後の開発は、既存機能の改善や新たな機能提案によって進められます。
 
 ## 次の一手候補
-1. プロジェクトサマリー生成プロンプトのレビューと改善
-   - 最初の小さな一歩: `.github/actions-tmp/.github_automation/project_summary/prompts/development-status-prompt.md` と `project-overview-prompt.md` の現在の内容を確認し、出力されているサマリーが意図通りか、より高品質にするための改善点を検討する。
-   - Agent実行プロンプト:
-     ```
-     対象ファイル: .github/actions-tmp/.github_automation/project_summary/prompts/development-status-prompt.md
-                 .github/actions-tmp/.github_automation/project_summary/prompts/project-overview-prompt.md
-                 .github/actions-tmp/generated-docs/development-status.md
-                 .github/actions-tmp/generated-docs/project-overview.md
-
-     実行内容: 上記のプロンプトファイルとそれによって生成されたサマリーファイルの内容を比較分析し、現在のプロンプトが期待される出力（開発状況とプロジェクト概要の正確な要約）を生成しているかを評価してください。特に、不要なハルシネーションを排除し、より簡潔で的確な情報を引き出すための改善点を提案してください。
-
-     確認事項: プロンプトの変更がサマリーの全体的なトーンや含まれる情報の種類にどのような影響を与えるかを考慮してください。ユーザーが求める情報と提供される情報のギャップを特定してください。
-
-     期待する出力: 改善提案をMarkdown形式で出力してください。具体的には、各プロンプトファイルに対して提案される変更点、その理由、および期待される出力の変化を記述してください。
-     ```
-
-2. CIワークフロー(`.github/workflows/*.yml`)の整理と効率化
-   - 最初の小さな一歩: プロジェクトルートの`.github/workflows/`ディレクトリと`.github/actions-tmp/.github/workflows/`ディレクトリにある`call-*.yml`ファイル群を一覧にし、それぞれの目的と、どのメインワークフローから呼び出されているかを把握する。
-   - Agent実行プロンプト:
-     ```
-     対象ファイル: .github/workflows/*.yml
-                 .github/actions-tmp/.github/workflows/*.yml
-
-     実行内容: 対象ファイル群に存在するGitHub Actionsのワークフローを分析し、特に`call-*.yml`パターンを持つワークフローの呼び出し関係、依存性、および潜在的な重複や非効率性を特定してください。CIプロセスの全体的な健全性を評価し、より効率的で保守しやすい構造にするための改善案を提案してください。
-
-     確認事項: 既存のCI/CDパイプラインの機能が損なわれないこと。また、将来的なメンテナンスコストを低減できるような提案であること。複数の`call-`ワークフローが不必要に類似した処理を行っていないか確認してください。
-
-     期待する出力: Markdown形式でCIワークフローの現状分析と改善提案を出力してください。具体的には、ワークフロー間の依存関係マップ（簡易的なものでも可）、重複している可能性のある処理、およびそれらを整理・統合するための具体的なステップやコード例を含めてください。
-     ```
-
-3. `callgraph`アクションのドキュメント強化と利用ガイドの作成
-   - 最初の小さな一歩: `.github/actions-tmp/.github_automation/callgraph/docs/callgraph.md` ファイルを確認し、現在のドキュメントが`callgraph`アクションの全ての機能、設定オプション、および一般的なユースケースを網羅しているかを評価する。
+1. callgraphワークフローの外部利用ドキュメント拡充 [Issue #12](../issue-notes/12.md) に関連する追加タスク
+   - 最初の小さな一歩: `.github/actions-tmp/.github_automation/callgraph/docs/callgraph.md` を開き、現在の内容を確認する。
    - Agent実行プロンプト:
      ```
      対象ファイル: .github/actions-tmp/.github_automation/callgraph/docs/callgraph.md
-                 .github/actions-tmp/.github_automation/callgraph/scripts/*.cjs
-                 .github/actions-tmp/.github/workflows/callgraph.yml
-                 .github/actions-tmp/.github/workflows/call-callgraph.yml
 
-     実行内容: `callgraph`アクションに関連するドキュメントと実装コードを分析し、現在のドキュメントが外部利用者がこのアクションを効果的に設定・利用するために十分であるかを評価してください。特に、必須設定、オプションパラメータ、出力形式、トラブルシューティングに関する情報が不足していないかを確認し、改善点を提案してください。
+     実行内容: `callgraph.md`の内容を分析し、外部プロジェクトで`callgraph.yml`または`call-callgraph.yml`を利用する際に必要な設定手順、前提条件、および出力形式についての情報が不足している点を洗い出してください。
 
-     確認事項: ドキュメントが最新のコードベースと同期していること。初心者でも理解できるよう、明確で具体的な例を含むこと。自動生成された`generated-docs/callgraph.html`との整合性も考慮してください。
+     確認事項: `.github/actions-tmp/.github/workflows/callgraph.yml` および `.github/actions-tmp/.github/workflows/call-callgraph.yml` の入出力パラメータと、`callgraph.md` の現在の記述内容との整合性を確認してください。
 
-     期待する出力: Markdown形式で`callgraph`アクションのドキュメント改善提案と、不足している情報や新しい利用ガイドの草案を出力してください。具体的には、`callgraph.md`の更新内容、外部利用者が設定時に注意すべき点、一般的なユースケース例を含めてください。
+     期待する出力: 不足している情報を補完するための具体的な記述内容の提案をMarkdown形式で出力してください。
+     ```
+
+2. Daily Project Summaryのプロンプト改善によるレポート品質向上 [Issue #22](../issue-notes/22.md) に関連する追加タスク
+   - 最初の小さな一歩: `.github/actions-tmp/.github_automation/project_summary/prompts/development-status-prompt.md` を開き、現在のプロンプト内容を確認する。
+   - Agent実行プロンプト:
+     ```
+     対象ファイル: .github/actions-tmp/.github_automation/project_summary/prompts/development-status-prompt.md
+
+     実行内容: 現在の`development-status-prompt.md`の内容を分析し、より詳細で具体的な開発状況を生成するために、どのような情報（例：直近のコミット詳細、変更ファイルの類型、特定のIssueへの言及方法など）を追加または修正すべきかを検討してください。
+
+     確認事項: 現在の`generated-docs/development-status.md`の生成結果と、このプロンプトがどのように影響しているかを把握し、ハルシネーションを避けるための制約が十分に考慮されているか確認してください。
+
+     期待する出力: 改善された`development-status-prompt.md`の提案内容をMarkdown形式で出力してください。
+     ```
+
+3. 新規記事 `github-zenn-linkage-20260316.md` のレビューと公開準備 [Issue #40](../issue-notes/40.md) に関連する追加タスク
+   - 最初の小さな一歩: `articles/github-zenn-linkage-20260316.md` を開き、記事の内容と構造を確認する。
+   - Agent実行プロンプト:
+     ```
+     対象ファイル: articles/github-zenn-linkage-20260316.md
+
+     実行内容: 記事の内容をレビューし、以下の観点から改善点を特定してください：
+     1. 文章の明瞭性、一貫性
+     2. 技術的な正確性
+     3. Zennでの公開に適したフォーマット（見出し、コードブロック、画像など）
+     4. 結論や要約が明確であるか
+
+     確認事項: 記事の内容がプロジェクトの目的や既存のドキュメントと矛盾しないか、また、ターゲット読者にとって理解しやすい内容になっているかを確認してください。
+
+     期待する出力: 記事の改善提案をMarkdown形式で出力してください。具体的には、修正すべき箇所とその理由、提案される修正案を含めてください。
 
 ---
-Generated at: 2026-03-18 07:08:50 JST
+Generated at: 2026-03-23 07:04:23 JST

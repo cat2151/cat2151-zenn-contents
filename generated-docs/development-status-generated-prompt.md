@@ -1,4 +1,4 @@
-Last updated: 2026-03-18
+Last updated: 2026-03-23
 
 # 開発状況生成プロンプト（開発者向け）
 
@@ -227,6 +227,9 @@ Last updated: 2026-03-18
 
 ## 最近の変更（過去7日間）
 ### コミット履歴:
+32c672e 微調整
+04f4acc Publish article and add implementation tools
+8c226e8 Update project summaries (overview & development status) [auto]
 1eec6c7 追記：「この記事に書かないこと」
 4f79f1a Update project summaries (overview & development status) [auto]
 4904c38 執筆中：小規模TUIをClaude無料版chatで作る遊びが楽しい
@@ -239,8 +242,6 @@ Last updated: 2026-03-18
 .github/workflows/call-issue-note.yml
 .github/workflows/call-translate-readme.yml
 .github/workflows/issue-note.yml
-.gitignore
-_config.yml
 articles/github-zenn-linkage-20260316.md
 generated-docs/development-status-generated-prompt.md
 generated-docs/development-status.md
@@ -251,4 +252,4 @@ package.json
 
 
 ---
-Generated at: 2026-03-18 07:08:32 JST
+Generated at: 2026-03-23 07:03:59 JST
